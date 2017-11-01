@@ -48,6 +48,7 @@ public class AnagramProgram {
 	}
 
 	public static void main(String[] args) {
+		System.out.println("new change in git....");
 		isAnagram("Mother In Law", "Hitler Woman");
 
 		isAnagram("keEp", "peeK");
