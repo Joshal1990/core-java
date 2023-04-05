@@ -1,19 +1,37 @@
 plugins {
+    id 'org.springframework.boot' version '2.6.8'
     id 'java'
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+group = 'com.example'
+version = '1.0.0-SNAPSHOT'
+println "Build Version = ${version ?: '[none]'}"
+
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
 
 repositories {
     mavenCentral()
+    maven { url "https://repo.spring.io/release" }
+    maven { url "https://repository.jboss.org/maven2" }
 }
 
+
 dependencies {
+    implementation platform('org.springframework.boot:spring-boot-dependencies:2.7.5')
+    implementation 'org.apache.commons:commons-configuration2:2.7'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 test {
     useJUnitPlatform()
+}
+
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
+    outputs.upToDateWhen { false }
 }

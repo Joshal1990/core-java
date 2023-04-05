@@ -1,0 +1,24 @@
+<html>
+<head>
+<style>
+body{
+	background-color: lightpink;
+}
+h1{
+	color: white;
+	text-align: center;
+	font-size: 50px;
+}
+
+p{
+	font-size: 20px;
+	font-family: verdana;
+}
+
+</style>
+</head>
+	<body>
+		<h1>CSS Learning</h1>
+		<p>This is a sample paragraph!!!</p>
+	</body>
+</html>
